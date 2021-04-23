@@ -22,7 +22,7 @@
             <h1>Invalid Request</h1>
         </div>
         <div class="alert alert-warning" role="alert">
-            <p>You've made an invalid request. Please <a href="admin.php" class="alert-link">go back</a> and try again.</p>
+            <p>You've made an invalid request. Please <a href="main.php" class="alert-link">go back</a> and try again.</p>
         </div>
     </div>
     <?php

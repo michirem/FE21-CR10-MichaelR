@@ -52,7 +52,15 @@ include_once 'actions/a_select.php';
                 </tr>
                 <tr>
                     <th>Publisher Name</th>
-                    <td><?php echo $data['name'] ?></td>
+                    <td><?php echo $data['name'] ?> / More from <a href='publisher.php?id="<?php echo $publisher_id ?>"' class='text-decoration-none'><?php echo $data['name'] ?></a></td>
+                </tr>
+                <tr>
+                    <th>Publisher Address</th>
+                    <td><?php echo $data['address'] ?></td>
+                </tr>
+                <tr>
+                    <th>Publisher Size</th>
+                    <td><?php echo $data['size'] ?></td>
                 </tr>
                 <tr>
                     <th>Availability Status</th>

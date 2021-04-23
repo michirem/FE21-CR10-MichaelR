@@ -10,8 +10,7 @@ function showItem($img, $title, $type, $author, $id, $author_id)
                 <p class=\"card-text\">".$type."</p>
             </div>
             <ul class=\"list-group list-group-flush\">
-                <li class=\"list-group-item\">Author/Creator: ".$author."</li>
-                <li class=\"list-group-item\">More from this <a href='author.php?id=".$author_id."' class='text-decoration-none'>Author</a></li>
+                <li class=\"list-group-item\">Author / Creator: <a href='author.php?id=".$author_id."' class='text-decoration-none'>".$author."</a></li>
             </ul>
             <div class=\"card-body\">
                 <a href='details.php?id=".$id."' class='btn btn-primary btn-sm'>Details</a>

@@ -13,7 +13,7 @@ include_once 'actions/showrows.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap 5 CSS bundle  -->
     <?php include_once 'components/bootcss.php';?>
-    <title>Author Details</title>
+    <title>Publisher Details</title>
 </head>
 <body>
     <header>
@@ -21,8 +21,8 @@ include_once 'actions/showrows.php';
             include_once 'components/navigation.php';
         ?>
     </header>
-    <div class="d-flex justify-content-center align-items-center" style="background-image: url(https://images.unsplash.com/photo-1551127481-43279ba6dec4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80); height: 60vh; background-size: cover; background-repeat: no-repeat; background-position: center;">
-    <h1 class="text-light">Media from this Author</h1>
+    <div class="d-flex justify-content-center align-items-center" style="background-image: url(https://images.unsplash.com/photo-1485498128961-422168ba5f87?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2204&q=80); height: 60vh; background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <h1 class="text-light">Media from this Publisher</h2>
     </div>
     <div class="container">
         <div class="class=d-flex flex-column align-items-center py-2">
@@ -32,15 +32,15 @@ include_once 'actions/showrows.php';
                         <th>Picture</th>
                         <th>Title</th>
                         <th>ISBN</th>
-                        <th>Publisher</th>
                         <th>Author</th>
+                        <th>Publisher</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     if ($_GET['id']) {
                         $id = $_GET['id'];
-                        $query = "SELECT * FROM media LEFT JOIN author ON media.author_id = author.author_id LEFT JOIN publisher ON media.publisher_id = publisher.publisher_id WHERE author.author_id = {$id}";
+                        $query = "SELECT * FROM media LEFT JOIN author ON media.author_id = author.author_id LEFT JOIN publisher ON media.publisher_id = publisher.publisher_id WHERE publisher.publisher_id = {$id}";
                         $result = mysqli_query($connect, $query);
                         if(mysqli_num_rows($result)  > 0){
                             for ($set = array(); $row = $result->fetch_assoc(); $set[] = $row);
@@ -55,8 +55,8 @@ include_once 'actions/showrows.php';
                                 
                                 $title = $data['title'];
                                 $isbn = $data['ISBN'];
-                                $publisher = $data['name'];
                                 $author = $data['f_name']." ".$data['l_name'];
+                                $publisher = $data['name'];
                     
                                 echo showRows($image, $title, $isbn, $publisher, $author);
                                 
@@ -71,7 +71,7 @@ include_once 'actions/showrows.php';
                     ?>
                 </tbody>
             </table>
-            <a href="main.php" class='btn btn-primary my-3'>Back</a></td>
+            <a href="javascript:history.back()" class='btn btn-primary my-3'>Back</a></td>
         </div>
     </div>
     <?php
