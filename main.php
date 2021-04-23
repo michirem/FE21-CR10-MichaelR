@@ -23,8 +23,7 @@
             include_once 'actions/db_connect.php';
             include_once 'actions/showitems.php';
 
-            $query = "SELECT media.id, media.image, media.title, media.type, author.f_name AS f_name, author.l_name AS l_name
-                        FROM media LEFT JOIN author ON media.author_id = author.author_id";
+            $query = "SELECT * FROM media LEFT JOIN author ON media.author_id = author.author_id";
             $result = mysqli_query($connect, $query);
             for ($set = array(); $row = $result->fetch_assoc(); $set[] = $row);
 

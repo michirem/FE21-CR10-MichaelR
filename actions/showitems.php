@@ -34,8 +34,8 @@ function showItemAdmin($img, $title, $type, $author, $id)
                 <li class=\"list-group-item\">Author/Creator: ".$author."</li>
             </ul>
             <div class=\"card-body\">
-                <a href='update.php?id=".$id."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-                <a href='delete.php?id=".$id."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a>
+                <a href='update.php?id=".$id."' class='btn btn-primary btn-sm'>Edit</a>
+                <a href='delete.php?id=".$id."' class='btn btn-danger btn-sm'>Delete</a>
             </div>
         </div>
     </div>";

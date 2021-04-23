@@ -19,7 +19,7 @@ include_once 'actions/a_select.php';
         <div class="row justify-content-evenly py-5">
             <div class="mt-3 mb-3">
                 <h1>Element to be updated</h1>
-                <?php echo showItem($image, $data['title'], $data['type'], $data['f_name'].' '.$data['l_name'], $data['id']);?>
+                <?php echo showItem($image, $data['title'], $data['type'], $data['f_name'].' '.$data['l_name'], $data['id'], $author_id);?>
                 <fieldset>
                 <legend class='h2 py-4'>Update Medium</legend>
                 <form action="actions/a_update.php" method= "post" enctype="multipart/form-data">
