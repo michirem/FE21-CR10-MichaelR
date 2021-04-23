@@ -13,7 +13,7 @@ include_once 'actions/a_select.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap 5 CSS bundle  -->
     <?php include_once 'components/bootcss.php';?>
-    <title>Document</title>
+    <title>Details <?php echo $title ?></title>
 </head>
 <body>
     <header>
@@ -21,31 +21,45 @@ include_once 'actions/a_select.php';
             include_once 'components/navigation.php';
         ?>
     </header>
-    <div class="d-flex justify-content-center align-items-center" style="background-image: url(https://images.unsplash.com/photo-1601987077677-5346c0c57d3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80); height: 50vh; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;">
-        <h1 class="text-center text-light">Reserve<br>your favorite medium<br>now!</h1>
+    <div class="d-flex justify-content-center align-items-center" style="background-image: url(<?php echo $image ?>); height: 80vh; background-size: contain; background-repeat: no-repeat; background-position: center;">
     </div>
     <div class="container">
-        <div class="row justify-content-evenly py-2">
-            <?php
-            include_once 'actions/db_connect.php';
-            include_once 'actions/showitems.php';
-
-            $query = "SELECT media.id, media.image, media.title, media.type, author.f_name AS f_name, author.l_name AS l_name
-                        FROM media LEFT JOIN author ON media.author_id = author.author_id";
-            $result = mysqli_query($connect, $query);
-            for ($set = array(); $row = $result->fetch_assoc(); $set[] = $row);
-
-            foreach($set as $value)
-            {
-                $image = '';
-                if(strlen($value['image']) < 18)
-                {
-                    $image = 'pictures/'.$value['image'];
-                } else
-                $image = $value['image'];
-                echo showItem($image, $value['title'], $value['type'], $value['f_name'].' '.$value['l_name'], $value['id']);
-            }
-            ?>
+        <div class="class=d-flex flex-column align-items-center py-2">
+            <table class='table'>
+                <tr>
+                    <th>Title</th>
+                    <td><?php echo $title ?></td>
+                </tr>
+                <tr>
+                    <th>Author</th>
+                    <td><?php echo $data['f_name']." ".$data['l_name'] ?></td>
+                </tr>
+                <tr>
+                    <th>ISBN</th>
+                    <td><?php echo $isbn ?></td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td><?php echo $short_desc ?></td>
+                </tr>
+                <tr>
+                    <th>Date published</th>
+                        <td><?php echo $publish_date ?></td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td><?php echo $type ?></td>
+                </tr>
+                <tr>
+                    <th>Publisher Name</th>
+                    <td><?php echo $data['name'] ?></td>
+                </tr>
+                <tr>
+                    <th>Availability Status</th>
+                    <td><?php echo $status ?></td>
+                </tr>
+            </table>
+            <a href="main.php" class='btn btn-primary my-3'>Back</a></td>
         </div>
     </div>
     <?php

@@ -41,7 +41,7 @@ include_once 'actions/a_select.php';
                             <td><input class='form-control' type="text" name="imagelink"  placeholder="Image URL"/></td>
                         </tr>
                         <tr>
-                            <th>Author ID</th>
+                            <th>Author/Creator ID</th>
                             <td><select id="authors" name="author_id" value="<?php echo $author_id ?>">
                                 <option value="1">1</option>
                                 <option value="2">2</option>

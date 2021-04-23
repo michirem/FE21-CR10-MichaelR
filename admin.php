@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap 5 CSS bundle  -->
     <?php include_once 'components/bootcss.php';?>
-    <title>Document</title>
+    <title>Admin</title>
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
     </div>
     <div class="container">
         <div class='d-flex justify-content-center mt-3'>
-            <a href= "create.php" class='btn btn-primary'>Add a Medium</a>
+            <a href= "create.php" class='btn btn-primary'>Add Media</a>
         </div>
         <div class="row justify-content-evenly py-5">
             <?php

@@ -1,7 +1,7 @@
 <?php 
 if ($_GET['id']) {
     $id = $_GET['id'];
-    $query = "SELECT * FROM media LEFT JOIN author ON media.author_id = author.author_id WHERE media.id = {$id}";
+    $query = "SELECT * FROM media LEFT JOIN author ON media.author_id = author.author_id LEFT JOIN publisher ON media.publisher_id = publisher.publisher_id WHERE media.id = {$id}";
     $result = mysqli_query($connect, $query);
     if ($result->num_rows == 1) {
         $data = $result->fetch_assoc();
