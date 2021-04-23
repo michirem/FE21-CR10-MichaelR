@@ -19,7 +19,7 @@ include_once 'actions/a_select.php';
         <div class="row justify-content-evenly py-5">
             <div class="mt-3 mb-3">
                 <h1>Element to be deleted</h1>
-                <?php echo showItem($image, $data['title'], $data['type'], $data['f_name'].' '.$data['l_name'], $data['id']);?>
+                <?php echo showItem($image, $data['title'], $data['type'], $data['f_name'].' '.$data['l_name'], $data['id']), $data['author_id'];?>
                 <h3 class="mb-4">Do you really want to delete this medium?</h3>
                 <form action ="actions/a_delete.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $id ?>" />

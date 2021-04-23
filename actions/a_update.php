@@ -56,7 +56,7 @@
                 } else {
                 $currentimage = $query2data['image']; // URL
             }
-        $message = "The entry below was successfully updated:<br><br>".showitem($currentimage, $title, $type, $query2data['f_name']." ".$query2data['f_name'], '' /* id left empty for practicality reasons */); // Preview of updated item
+        $message = "The entry below was successfully updated:<br><br>".showitem($currentimage, $title, $type, $query2data['f_name']." ".$query2data['f_name'], '', $author_id /* id left empty for practicality reasons */); // Preview of updated item
             if($_POST["imagelink"] === ""){ // only apply if no URL was provided and an image was uploaded
             $uploadError = ($img->error !=0)? $img->ErrorMessage :'';
             }

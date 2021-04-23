@@ -43,7 +43,7 @@
          
         if(mysqli_query($connect, $query) == true){ // if the query runs successfully it will show a message and a link to go back to the home page.
         $class = "success";
-        $message = "The entry below was successfully created:<br><br>".showitem($imgname, $title, $type, $author_id, ''/* id left empty for practicality reasons */); // Preview of added item
+        $message = "The entry below was successfully created:<br><br>".showitem($imgname, $title, $type, $author_id, '', $author_id/* id left empty for practicality reasons */); // Preview of added item
             if($_POST["imagelink"] === ""){ // only apply if no URL was provided and an image was uploaded
             $uploadError = ($img->error !=0)? $img->ErrorMessage :'';
             }

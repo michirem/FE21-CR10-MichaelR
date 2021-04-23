@@ -36,7 +36,7 @@
                     $image = 'pictures/'.$value['image'];
                 } else
                 $image = $value['image'];
-                echo showItem($image, $value['title'], $value['type'], $value['f_name'].' '.$value['l_name'], $value['id']);
+                echo showItem($image, $value['title'], $value['type'], $value['f_name'].' '.$value['l_name'], $value['id'], $value['author_id']);
             }
             ?>
         </div>
