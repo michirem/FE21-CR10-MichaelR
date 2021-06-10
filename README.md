@@ -2,6 +2,20 @@
 
 Library with database file CR10_MichaelR_BigLibrary. Please import Database file first.
 
+For this CodeReview, the following criteria were graded:
+- Create a database and name it: CR10-YourName-BigLibrary. The database must have the name as specified in this task! Only one table is required for this CodeReview! 
+- Add test data: at least 10 entries 
+- Display List of Media: Fetch the media data from your database and display it on the browser.
+- User-Friendly GUI: Create web-pages with a nice design using the Bootstrap framework or just HTML/CSS/JavaScript.
+- Insert form for Media: Create an inserting form for Media. A user should be able to insert data into the database over the front-end form.
+- Update form for Media: Create a form for updating Media.
+- Delete Media: A user should be able to delete Media from the database by clicking on the Delete button.
+
+**Bonus Points:**
+
+- You should create a button - "show media", that will be displayed together with every Media shown on the list. Once that button is clicked, all details regarding that specific Media (title, author, ISBN, short_description, and status (available or reserved) will be displayed on a new web page.
+- Create a list of Publishers. When you click on a Publisher name, a user should be able to see the list of Media that “belong” to this specific Publisher.
+
 Functionality of the page:
 
 Home:
@@ -22,7 +36,9 @@ Contact:
 - Dummy Contact Page, no functionality yet
 
 Open bugs to fix:
-- if both URL and File Upload are provided, an error message should appear - doesn't work - can't figure why database accepts empty entry for image if set to "NOT NULL", need to look further into this. Feedback welcome!
+- if both URL and File Upload are provided, an error message should appear
+
+Feedback welcome!
 
 Cheers,
 Michael
